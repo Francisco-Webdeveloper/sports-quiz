@@ -2,6 +2,7 @@ $font-stack: "Karla", sans-serif;
 $font-click: "Inter", sans-serif;
 $primary-color: #293264;
 $button-color: #4d5b9e;
+$selected-answer-color: #d6dbf5;
 
 @mixin center-div {
   display: flex;
@@ -53,6 +54,10 @@ body {
       box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
     }
   }
+
+  // .selected {
+  //   background-color: orange;
+  // }
 }
 
 .quizPage {

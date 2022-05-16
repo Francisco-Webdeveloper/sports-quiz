@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Answer } from "./components/Answer";
 
 const App = () => {
   const [quiz, setQuiz] = useState(false);
@@ -7,6 +8,7 @@ const App = () => {
       question: "",
       correctAnswer: "",
       incorrectAnswers: [],
+      userAnswer: null,
     },
   ]);
 
@@ -32,6 +34,7 @@ const App = () => {
                 correctAnswer,
                 incorrectAnswers,
                 answers,
+                userAnswer: null,
               };
             }
           )
@@ -43,22 +46,51 @@ const App = () => {
     fetchApi();
   }, []);
 
+  // select the user's answers
+  const handleSelectedAnswer = (selectedQuestion, selectedAnswer) => {
+    setQuestionsAndAnswers((prevQuestionsAndAnswers) => {
+      // shallow clone of the previous state
+      const newQuestionsAndAnswers = [...prevQuestionsAndAnswers];
+      // find the specific question the answer belongs to
+      // newQuestionsAndAnswers = [a3ebc,8de7a, ...]
+      const selectedQuestionAndAnswers = newQuestionsAndAnswers.find(
+        // .find returns a reference for whatever object we have found inside the array of newQuestionsAndAnswers
+        // selectedQuestion = a3ebc, newQuestionsAndAnswers[0] = a3ebc
+        ({ question }) => question === selectedQuestion
+      );
+      // set the userAnswer for the previously selected question
+      // through the reference we can access the property 'userAnswer' and assign it a new value
+      selectedQuestionAndAnswers.userAnswer = selectedAnswer;
+      // return the new state
+      return newQuestionsAndAnswers;
+    });
+  };
+
+  console.log(questionsAndAnswers);
+
   return (
     <>
       {quiz ? (
         <div className="quizPage">
-          {questionsAndAnswers.map(({ question, answers }) => {
-            return (
-              <div className="question-answer">
-                <p className="questions">{question}</p>
-                <ul className="answers">
-                  {answers.map((answer) => (
-                    <li>{answer}</li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
+          {questionsAndAnswers.map(
+            ({ question, answers, correctAnswer, userAnswer }) => {
+              return (
+                <div className="question-answer">
+                  <p className="questions">{question}</p>
+                  <ul className="answers">
+                    {answers.map((answer) => (
+                      <Answer
+                        answerText={answer}
+                        onClick={() => handleSelectedAnswer(question, answer)}
+                        selectedAnswer={answer === userAnswer}
+                        rightAnswer={userAnswer === correctAnswer}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              );
+            }
+          )}
         </div>
       ) : (
         <div className="firstPage">
