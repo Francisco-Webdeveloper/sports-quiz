@@ -1,5 +1,5 @@
 $font-stack: "Karla", sans-serif;
-$font-button: "Inter", sans-serif;
+$font-click: "Inter", sans-serif;
 $primary-color: #293264;
 $button-color: #4d5b9e;
 
@@ -22,17 +22,19 @@ body {
   @include center-div();
 }
 
-.firstPage {
+.firstPage,
+.quizPage {
   width: 550px;
   height: 550px;
   background: #f5f7fb;
   @include center-div();
   flex-direction: column;
+  gap: 15px;
 
   .startQuizBtn {
     background: $button-color;
     color: #f5f7fb;
-    font-family: $font-button;
+    font-family: $font-click;
     font-weight: 500;
     font-size: 1rem;
     line-height: 19px;
@@ -49,6 +51,41 @@ body {
 
     &:active {
       box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+    }
+  }
+}
+
+.quizPage {
+  justify-content: start;
+  overflow: auto;
+  padding: 40px 65px 0 65px;
+
+  .question-answer {
+    border-bottom: 1px solid #dbdef0;
+    width: 100%;
+  }
+
+  .questions {
+    line-height: 19px;
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+  }
+  .answers {
+    margin: 10px 0 17px 0;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      font-size: 10px;
+      font-family: $font-click;
+      font-weight: 500;
+      border: 0.8px solid #4d5b9e;
+      border-radius: 8px;
+      margin: 0 13px 5px 0;
+      padding: 3px 6px;
+      min-width: 80px;
+      text-align: center;
+      cursor: pointer;
     }
   }
 }
