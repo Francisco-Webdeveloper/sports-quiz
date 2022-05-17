@@ -1,0 +1,68 @@
+@import "./style.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #546663;
+  height: 100vh;
+  font-family: $font-stack;
+  color: $primary-color;
+  @include center-div();
+}
+
+.firstPage,
+.quizPage {
+  width: 550px;
+  height: 550px;
+  background: #f5f7fb;
+  @include center-div();
+  flex-direction: column;
+  gap: 15px;
+
+  .startQuizBtn {
+    background: $button-color;
+    color: #f5f7fb;
+    font-family: $font-click;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 19px;
+    width: 193px;
+    height: 52px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+    }
+  }
+}
+
+.quizPage {
+  justify-content: start;
+  overflow: auto;
+  padding: 40px 65px 0 65px;
+
+  .questionAnswer {
+    border-bottom: 1px solid #dbdef0;
+    width: 100%;
+  }
+
+  .questions {
+    line-height: 19px;
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+  }
+  .answers {
+    margin: 10px 0 17px 0;
+    padding-left: 0;
+  }
+}

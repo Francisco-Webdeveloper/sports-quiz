@@ -3,6 +3,7 @@ import { Answer } from "./components/Answer";
 import { Score } from "./components/Score";
 import { CheckAnswers } from "./components/CheckAnswers";
 import { nanoid } from "nanoid";
+import styles from "./App.module.scss";
 
 const App = () => {
   const [quiz, setQuiz] = useState(false);
@@ -94,13 +95,13 @@ const App = () => {
   return (
     <>
       {quiz ? (
-        <div className="quizPage">
+        <div className={styles.quizPage}>
           {questionsAndAnswers.map(
             ({ question, answers, correctAnswer, userAnswer }, id) => {
               return (
-                <div key={id + 1} className="question-answer">
-                  <p className="questions">{question}</p>
-                  <ul className="answers">
+                <div key={id + 1} className={styles.questionAnswer}>
+                  <p className={styles.questions}>{question}</p>
+                  <ul className={styles.answers}>
                     {answers.map((answer) => (
                       <Answer
                         key={nanoid()}
@@ -130,9 +131,9 @@ const App = () => {
           )}
         </div>
       ) : (
-        <div className="firstPage">
+        <div className={styles.firstPage}>
           <h2>Quizzical</h2>
-          <button className="startQuizBtn" onClick={startQuiz}>
+          <button className={styles.startQuizBtn} onClick={startQuiz}>
             Start Quiz
           </button>
         </div>
