@@ -21,6 +21,8 @@ body {
   @include center-div();
   flex-direction: column;
   gap: 15px;
+  position: relative;
+  overflow: hidden;
 
   .startQuizBtn {
     background: $button-color;
@@ -43,6 +45,50 @@ body {
     &:active {
       box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
     }
+  }
+
+  .yellowCorner,
+  .blueCorner,
+  .smallYellowCorner,
+  .smallBlueCorner {
+    height: 235px;
+    width: 297px;
+    position: absolute;
+  }
+
+  .yellowCorner,
+  .smallYellowCorner {
+    background: #fffad1;
+    border-radius: 167px 148px / 60px 143px;
+    transform: rotate(-125deg);
+  }
+
+  .blueCorner,
+  .smallBlueCorner {
+    background: #deebf8;
+    border-radius: 256px 118px / 148px 224px;
+  }
+
+  .yellowCorner {
+    left: 375px;
+    top: -125px;
+  }
+
+  .blueCorner {
+    left: -133px;
+    top: 412px;
+    transform: rotate(5deg);
+  }
+
+  .smallYellowCorner {
+    left: 465px;
+    top: -125px;
+  }
+
+  .smallBlueCorner {
+    left: -234px;
+    top: 370px;
+    transform: rotate(438deg);
   }
 }
 

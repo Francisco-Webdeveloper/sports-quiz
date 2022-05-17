@@ -97,6 +97,8 @@ const App = () => {
     <>
       {quiz ? (
         <div className={styles.quizPage}>
+          <div className={styles.smallYellowCorner}></div>
+          <div className={styles.smallBlueCorner}></div>
           {questionsAndAnswers.map(
             ({ question, answers, correctAnswer, userAnswer }, id) => {
               return (
@@ -133,7 +135,10 @@ const App = () => {
         </div>
       ) : (
         <div className={styles.firstPage}>
-          <h2>Quizzical</h2>
+          <div className={styles.yellowCorner}></div>
+          <div className={styles.blueCorner}></div>
+          <h2>Sports Quiz</h2>
+          <p>Challenge yourself and prove your sports knowledge</p>
           <button className={styles.startQuizBtn} onClick={startQuiz}>
             Start Quiz
           </button>
