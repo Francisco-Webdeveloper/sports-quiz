@@ -3,6 +3,7 @@ import { Answer } from "./components/Answer";
 import { Score } from "./components/Score";
 import { CheckAnswers } from "./components/CheckAnswers";
 import { nanoid } from "nanoid";
+import { decodeHtml } from "./helpers";
 import styles from "./App.module.scss";
 
 const App = () => {
@@ -100,12 +101,12 @@ const App = () => {
             ({ question, answers, correctAnswer, userAnswer }, id) => {
               return (
                 <div key={id + 1} className={styles.questionAnswer}>
-                  <p className={styles.questions}>{question}</p>
+                  <p className={styles.questions}>{decodeHtml(question)}</p>
                   <ul className={styles.answers}>
                     {answers.map((answer) => (
                       <Answer
                         key={nanoid()}
-                        answerText={answer}
+                        answerText={decodeHtml(answer)}
                         onClick={() => handleSelectedAnswer(question, answer)}
                         isSelected={answer === userAnswer}
                         rightAnswer={answer === correctAnswer}
