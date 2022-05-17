@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Answer } from "./components/Answer";
+import { CheckAnswers } from "./components/CheckAnswers";
+import { nanoid } from "nanoid";
 
 const App = () => {
   const [quiz, setQuiz] = useState(false);
@@ -71,18 +73,25 @@ const App = () => {
     setAreAllAnswersChecked(true);
   };
 
+  // enables and disables the 'Check Answers' button
+  // if there is at least one answer whose value is null, the button is disabled
+  const notAllQuestionsAnswered = questionsAndAnswers.some(
+    ({ userAnswer }) => userAnswer === null
+  );
+
   return (
     <>
       {quiz ? (
         <div className="quizPage">
           {questionsAndAnswers.map(
-            ({ question, answers, correctAnswer, userAnswer }) => {
+            ({ question, answers, correctAnswer, userAnswer }, id) => {
               return (
-                <div className="question-answer">
+                <div key={id + 1} className="question-answer">
                   <p className="questions">{question}</p>
                   <ul className="answers">
                     {answers.map((answer) => (
                       <Answer
+                        key={nanoid()}
                         answerText={answer}
                         onClick={() => handleSelectedAnswer(question, answer)}
                         isSelected={answer === userAnswer}
@@ -95,9 +104,26 @@ const App = () => {
               );
             }
           )}
-          <button className="checkAnswersBtn" onClick={handleAnswersChecked}>
-            Check Answers
-          </button>
+          {areAllAnswersChecked ? (
+            <div>
+              <p>You scored ?/5 correct Answers</p>
+              <button>Play Again</button>
+            </div>
+          ) : (
+            <CheckAnswers
+              onClick={handleAnswersChecked}
+              disabled={notAllQuestionsAnswered}
+            />
+            // <button
+            //   className={
+            //     notAllQuestionsAnswered ? "disabledBtn" : "checkAnswersBtn"
+            //   }
+            //   onClick={handleAnswersChecked}
+            //   disabled={notAllQuestionsAnswered}
+            // >
+            //   Check Answers
+            // </button>
+          )}
         </div>
       ) : (
         <div className="firstPage">

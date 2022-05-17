@@ -18,7 +18,7 @@ $incorrect-answer-color: #f8bcbc;
   border-radius: 10px;
   cursor: pointer;
   font-size: 10px;
-  font-family: Inter, sans-serif;
+  font-family: $font-click;
   font-weight: 500;
 }
 
@@ -100,16 +100,5 @@ body {
       text-align: center;
       cursor: pointer;
     }
-  }
-
-  .checkAnswersBtn {
-    @include small-button();
-  }
-
-  .checkAnswersBtn {
-    margin-top: 15px;
-    margin-bottom: 30px;
-    width: 120px;
-    min-height: 35px;
   }
 }
