@@ -3,3 +3,11 @@
 .selectedAnswer {
   background: $selected-answer-color;
 }
+
+.correctAnswer {
+  background: $correct-answer-color;
+}
+
+.incorrectAnswer {
+  background: $incorrect-answer-color;
+}

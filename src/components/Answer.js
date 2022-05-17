@@ -3,12 +3,33 @@ import styles from "./Answer.module.scss";
 export const Answer = ({
   answerText,
   onClick,
-  selectedAnswer,
+  isSelected,
   rightAnswer,
+  areAllAnswersChecked,
 }) => {
-  const className = selectedAnswer ? styles.selectedAnswer : null;
+  let className;
+  if (areAllAnswersChecked) {
+    if (rightAnswer) {
+      className = styles.correctAnswer;
+    } else if (isSelected) {
+      className = styles.incorrectAnswer;
+    }
+  } else {
+    if (isSelected) {
+      className = styles.selectedAnswer;
+    }
+  }
+
+  // only apply click event if all the answers are not checked yet
+  // otherwise I don't want the selected answers to be changed
+  const handleClick = () => {
+    if (!areAllAnswersChecked) {
+      return onClick();
+    }
+  };
+
   return (
-    <li onClick={onClick} className={className}>
+    <li onClick={handleClick} className={className}>
       {answerText}
     </li>
   );

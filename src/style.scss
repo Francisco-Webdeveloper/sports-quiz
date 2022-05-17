@@ -3,11 +3,23 @@ $font-click: "Inter", sans-serif;
 $primary-color: #293264;
 $button-color: #4d5b9e;
 $selected-answer-color: #d6dbf5;
+$correct-answer-color: #94d7a2;
+$incorrect-answer-color: #f8bcbc;
 
 @mixin center-div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin small-button {
+  background: $button-color;
+  color: #f5f7fb;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 10px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
 }
 
 * {
@@ -54,10 +66,6 @@ body {
       box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
     }
   }
-
-  // .selected {
-  //   background-color: orange;
-  // }
 }
 
 .quizPage {
@@ -92,5 +100,16 @@ body {
       text-align: center;
       cursor: pointer;
     }
+  }
+
+  .checkAnswersBtn {
+    @include small-button();
+  }
+
+  .checkAnswersBtn {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    width: 120px;
+    min-height: 35px;
   }
 }

@@ -3,6 +3,7 @@ import { Answer } from "./components/Answer";
 
 const App = () => {
   const [quiz, setQuiz] = useState(false);
+  const [areAllAnswersChecked, setAreAllAnswersChecked] = useState(false);
   const [questionsAndAnswers, setQuestionsAndAnswers] = useState([
     {
       question: "",
@@ -66,7 +67,9 @@ const App = () => {
     });
   };
 
-  console.log(questionsAndAnswers);
+  const handleAnswersChecked = () => {
+    setAreAllAnswersChecked(true);
+  };
 
   return (
     <>
@@ -82,8 +85,9 @@ const App = () => {
                       <Answer
                         answerText={answer}
                         onClick={() => handleSelectedAnswer(question, answer)}
-                        selectedAnswer={answer === userAnswer}
-                        rightAnswer={userAnswer === correctAnswer}
+                        isSelected={answer === userAnswer}
+                        rightAnswer={answer === correctAnswer}
+                        areAllAnswersChecked={areAllAnswersChecked}
                       />
                     ))}
                   </ul>
@@ -91,6 +95,9 @@ const App = () => {
               );
             }
           )}
+          <button className="checkAnswersBtn" onClick={handleAnswersChecked}>
+            Check Answers
+          </button>
         </div>
       ) : (
         <div className="firstPage">
