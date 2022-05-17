@@ -86,19 +86,5 @@ body {
   .answers {
     margin: 10px 0 17px 0;
     padding-left: 0;
-
-    li {
-      display: inline-block;
-      font-size: 10px;
-      font-family: $font-click;
-      font-weight: 500;
-      border: 0.8px solid #4d5b9e;
-      border-radius: 8px;
-      margin: 0 13px 5px 0;
-      padding: 3px 6px;
-      min-width: 80px;
-      text-align: center;
-      cursor: pointer;
-    }
   }
 }

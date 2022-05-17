@@ -1,0 +1,15 @@
+@import "../style.scss";
+
+.scoreAndPlayAgain {
+  width: 354px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.playAgain {
+  @include small-button();
+  width: 104px;
+  height: 30px;
+}

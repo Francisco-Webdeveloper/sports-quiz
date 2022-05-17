@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Answer } from "./components/Answer";
+import { Score } from "./components/Score";
 import { CheckAnswers } from "./components/CheckAnswers";
 import { nanoid } from "nanoid";
 
@@ -42,6 +43,8 @@ const App = () => {
             }
           )
         );
+        // to play again, I want to clean the old answers only after the new set of questions / answers is displayed
+        setAreAllAnswersChecked(false);
       });
   };
 
@@ -79,6 +82,15 @@ const App = () => {
     ({ userAnswer }) => userAnswer === null
   );
 
+  // get the number of correct answers
+  const score = questionsAndAnswers.filter(
+    ({ userAnswer, correctAnswer }) => userAnswer === correctAnswer
+  ).length;
+
+  const handleNewGame = () => {
+    fetchApi();
+  };
+
   return (
     <>
       {quiz ? (
@@ -105,24 +117,16 @@ const App = () => {
             }
           )}
           {areAllAnswersChecked ? (
-            <div>
-              <p>You scored ?/5 correct Answers</p>
-              <button>Play Again</button>
-            </div>
+            <Score
+              score={score}
+              questionsAndAnswers={questionsAndAnswers}
+              onClick={handleNewGame}
+            />
           ) : (
             <CheckAnswers
               onClick={handleAnswersChecked}
               disabled={notAllQuestionsAnswered}
             />
-            // <button
-            //   className={
-            //     notAllQuestionsAnswered ? "disabledBtn" : "checkAnswersBtn"
-            //   }
-            //   onClick={handleAnswersChecked}
-            //   disabled={notAllQuestionsAnswered}
-            // >
-            //   Check Answers
-            // </button>
           )}
         </div>
       ) : (
