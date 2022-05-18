@@ -20,6 +20,8 @@ export const Answer = ({
     }
   }
 
+  const className2 = areAllAnswersChecked && styles.defaultCursor;
+
   // only apply click event if all the answers are not checked yet
   // otherwise I don't want the selected answers to be changed
   const handleClick = () => {
@@ -29,7 +31,7 @@ export const Answer = ({
   };
 
   return (
-    <li onClick={handleClick} className={className}>
+    <li onClick={handleClick} className={`${className} ${className2}`}>
       {answerText}
     </li>
   );
