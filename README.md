@@ -201,13 +201,13 @@ Project Link: [https://github.com/Francisco-Webdeveloper/sports-quiz](https://gi
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Francisco-Webdeveloper/sports-quiz.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/Francisco-Webdeveloper/sports-quiz.svg?style=for-the-badge
 [contributors-url]: https://github.com/Francisco-Webdeveloper/sports-quiz/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Francisco-Webdeveloper/sports-quiz.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/Francisco-Webdeveloper/sports-quiz.svg?style=for-the-badge
 [forks-url]: https://github.com/Francisco-Webdeveloper/sports-quiz/network/members
-[stars-shield]: https://img.shields.io/github/stars/Francisco-Webdeveloper/sports-quiz.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/Francisco-Webdeveloper/sports-quiz.svg?style=for-the-badge
 [stars-url]: https://github.com/Francisco-Webdeveloper/sports-quiz/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Francisco-Webdeveloper/sports-quiz.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/Francisco-Webdeveloper/sports-quiz.svg?style=for-the-badge
 [issues-url]: https://github.com/Francisco-Webdeveloper/sports-quiz/issues
 [license-shield]: https://img.shields.io/github/license/Francisco-Webdeveloper/sports-quiz.svg?style=for-the-badge
 [license-url]: https://github.com/Francisco-Webdeveloper/sports-quiz/blob/master/LICENSE.txt
