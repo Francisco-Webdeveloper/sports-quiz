@@ -211,6 +211,6 @@ Project Link: [https://github.com/Francisco-Webdeveloper/sports-quiz](https://gi
 [issues-url]: https://github.com/Francisco-Webdeveloper/sports-quiz/issues
 [license-shield]: https://img.shields.io/github/license/Francisco-Webdeveloper/sports-quiz.svg?style=for-the-badge
 [license-url]: https://github.com/Francisco-Webdeveloper/sports-quiz/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/francisco-santos-webdeveloper/
 [product-screenshot]: public/screenshot.png
