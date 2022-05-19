@@ -195,6 +195,7 @@ Project Link: [https://github.com/Francisco-Webdeveloper/sports-quiz](https://gi
 * [CSS Modules](https://github.com/css-modules/css-modules)
 * [Scrimba](https://scrimba.com/)
 * [nanoid](https://github.com/ai/nanoid)
+* [Raúl Marín](https://github.com/raulmarindev)
 
 
 
