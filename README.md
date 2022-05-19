@@ -45,6 +45,7 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
+  * [What I learned](#what-i-learned)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -70,7 +71,30 @@ This section should list any major frameworks that you built your project using.
 * [create-react-app](https://github.com/facebook/create-react-app)
 * [Open Trivia DB API](https://opentdb.com/api_config.php)
 * [Sass](https://sass-lang.com/)
+* Flexbox
+* CSS Modules
 
+### What I learned
+* Promises and .then method - How do they work. When the user clicks the button to play a new game, the data has to be fecthed from the API again to retrieve a new set of questions and answers. Because there are functions that run faster than others, and the way it works is asynchronously, needed to place the function call, which was running before the API fetch, inside the .then method, in order to avoid displaying the older set of questions and answers.
+```
+  const fetchApi = () => {
+    fetch("https://opentdb.com/api.php?amount=5&category=21&type=multiple")
+      .then((response) => response.json())
+      .then((data) => {
+        setQuestionsAndAnswers(
+          (...)
+        );
+        // to play again, I want to clean the old answers only after the new set of questions / answers is displayed
+        setAreAllAnswersChecked(false);
+      });
+  };
+```
+* Object destructuring in array methods
+```
+const score = questionsAndAnswers.filter(
+  ({ userAnswer, correctAnswer }) => userAnswer === correctAnswer
+).length;
+```
 
 <!-- GETTING STARTED -->
 ## Getting Started
