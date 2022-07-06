@@ -237,5 +237,5 @@ Project Link: [https://github.com/Francisco-Webdeveloper/sports-quiz](https://gi
 [license-shield]: https://img.shields.io/github/license/Francisco-Webdeveloper/sports-quiz.svg?style=for-the-badge
 [license-url]: https://github.com/Francisco-Webdeveloper/sports-quiz/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/francisco-santos-webdeveloper/
+[linkedin-url]: https://www.linkedin.com/in/francisco-santos-frontend/
 [product-screenshot]: public/screenshot.png
